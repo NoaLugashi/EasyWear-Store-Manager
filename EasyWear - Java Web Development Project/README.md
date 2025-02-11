@@ -5,7 +5,7 @@ This application is a web-based sales management and reporting tool designed for
 It provides functionality to manage sales transactions, generate reports, and interact with a remote SQL database. The application is accessible both locally (via VPN) and through a public internet link.
 
 ## Project Repository
-[GitHub Repository]([https://github.com/NoaLugashi/EasyWear-Store-Manager])
+[GitHub Repository](https://github.com/NoaLugashi/EasyWear-Store-Manager)
 
 ## Students
 1. **Noa Lugashi**
