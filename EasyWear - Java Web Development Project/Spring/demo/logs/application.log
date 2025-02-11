@@ -1,0 +1,672 @@
+2025-01-16T11:12:26.486+02:00  INFO 11992 --- [demo] [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 21.0.5 with PID 11992 (started by Shaked in c:\Users\Shaked\GitHub\HIT\EasyWear - Java Web Development Project\Spring\demo)
+2025-01-16T11:12:26.488+02:00 DEBUG 11992 --- [demo] [main] com.example.demo.DemoApplicationTests    : Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-16T11:12:26.489+02:00  INFO 11992 --- [demo] [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-01-16T11:12:28.309+02:00  INFO 11992 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-16T11:12:28.311+02:00  INFO 11992 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-16T11:12:28.358+02:00  INFO 11992 --- [demo] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-16T11:12:28.361+02:00  INFO 11992 --- [demo] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.employee.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-16T11:12:28.365+02:00  INFO 11992 --- [demo] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.inventory.InventoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-16T11:12:28.368+02:00  INFO 11992 --- [demo] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.log.AuditLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-16T11:12:28.374+02:00  INFO 11992 --- [demo] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.sales.SalesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-16T11:12:28.376+02:00  INFO 11992 --- [demo] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-16T11:12:28.378+02:00  INFO 11992 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 0 JDBC repository interfaces.
+2025-01-16T11:12:28.399+02:00  INFO 11992 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-16T11:12:28.401+02:00  INFO 11992 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16T11:12:28.462+02:00  INFO 11992 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 6 JPA repository interfaces.
+2025-01-16T11:12:29.792+02:00  INFO 11992 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16T11:12:29.887+02:00  INFO 11992 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-16T11:12:29.954+02:00  INFO 11992 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-16T11:12:30.467+02:00  INFO 11992 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16T11:12:30.520+02:00  INFO 11992 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-16T11:12:31.002+02:00  INFO 11992 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: bb72a488-3eb1-4306-ab4f-7e0906019575
+2025-01-16T11:12:31.005+02:00  INFO 11992 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-16T11:12:31.058+02:00  WARN 11992 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-16T11:12:31.091+02:00  INFO 11992 --- [demo] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16T11:12:32.525+02:00  INFO 11992 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16T11:12:32.782+02:00  INFO 11992 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16T11:12:35.184+02:00  WARN 11992 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-16T11:12:35.282+02:00  WARN 11992 --- [demo] [main] r$InitializeUserDetailsManagerConfigurer : Found 3 UserDetailsService beans, with names [combinedUserDetailsService, employeeService, userService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-01-16T11:12:36.646+02:00  INFO 11992 --- [demo] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16T11:12:38.402+02:00  WARN 11992 --- [demo] [main] o.s.data.convert.CustomConversions       : Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-16T11:12:38.403+02:00  WARN 11992 --- [demo] [main] o.s.data.convert.CustomConversions       : Registering converter from class microsoft.sql.DateTimeOffset to class java.time.Instant as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-16T11:12:38.807+02:00  INFO 11992 --- [demo] [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-01-16T11:12:38.808+02:00  INFO 11992 --- [demo] [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@43347199]]
+2025-01-16T11:12:38.811+02:00  INFO 11992 --- [demo] [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-01-16T11:12:38.845+02:00  INFO 11992 --- [demo] [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 12.87 seconds (process running for 14.366)
+2025-01-16T11:12:39.937+02:00  INFO 11992 --- [demo] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-01-16T11:12:39.938+02:00  INFO 11992 --- [demo] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@43347199]]
+2025-01-16T11:12:39.938+02:00  INFO 11992 --- [demo] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-01-16T11:12:39.951+02:00  INFO 11992 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16T11:12:39.956+02:00  INFO 11992 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-16T11:12:39.963+02:00  INFO 11992 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-01-16T11:24:21.992+02:00  INFO 11628 --- [demo] [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 21.0.5 with PID 11628 (started by Shaked in c:\Users\Shaked\GitHub\HIT\EasyWear - Java Web Development Project\Spring\demo)
+2025-01-16T11:24:21.994+02:00 DEBUG 11628 --- [demo] [main] com.example.demo.DemoApplicationTests    : Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-16T11:24:21.996+02:00  INFO 11628 --- [demo] [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-01-16T11:24:23.529+02:00  INFO 11628 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-16T11:24:23.531+02:00  INFO 11628 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-16T11:24:23.586+02:00  INFO 11628 --- [demo] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-16T11:24:23.592+02:00  INFO 11628 --- [demo] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.employee.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-16T11:24:23.595+02:00  INFO 11628 --- [demo] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.inventory.InventoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-16T11:24:23.597+02:00  INFO 11628 --- [demo] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.log.AuditLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-16T11:24:23.599+02:00  INFO 11628 --- [demo] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.sales.SalesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-16T11:24:23.600+02:00  INFO 11628 --- [demo] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-16T11:24:23.601+02:00  INFO 11628 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 0 JDBC repository interfaces.
+2025-01-16T11:24:23.618+02:00  INFO 11628 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-16T11:24:23.620+02:00  INFO 11628 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16T11:24:23.685+02:00  INFO 11628 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 6 JPA repository interfaces.
+2025-01-16T11:24:25.099+02:00  INFO 11628 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16T11:24:25.187+02:00  INFO 11628 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-16T11:24:25.251+02:00  INFO 11628 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-16T11:24:25.753+02:00  INFO 11628 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16T11:24:25.817+02:00  INFO 11628 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-16T11:24:26.297+02:00  INFO 11628 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: fe43e8c4-b287-444d-b072-3216716c9451
+2025-01-16T11:24:26.301+02:00  INFO 11628 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-16T11:24:26.348+02:00  WARN 11628 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-16T11:24:26.387+02:00  INFO 11628 --- [demo] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16T11:24:27.529+02:00  INFO 11628 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16T11:24:27.687+02:00  INFO 11628 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16T11:24:29.449+02:00  WARN 11628 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-16T11:24:29.504+02:00  WARN 11628 --- [demo] [main] r$InitializeUserDetailsManagerConfigurer : Found 3 UserDetailsService beans, with names [combinedUserDetailsService, employeeService, userService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-01-16T11:24:30.642+02:00  INFO 11628 --- [demo] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16T11:24:32.070+02:00  WARN 11628 --- [demo] [main] o.s.data.convert.CustomConversions       : Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-16T11:24:32.070+02:00  WARN 11628 --- [demo] [main] o.s.data.convert.CustomConversions       : Registering converter from class microsoft.sql.DateTimeOffset to class java.time.Instant as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-16T11:24:32.358+02:00  INFO 11628 --- [demo] [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-01-16T11:24:32.359+02:00  INFO 11628 --- [demo] [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2026af0]]
+2025-01-16T11:24:32.361+02:00  INFO 11628 --- [demo] [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-01-16T11:24:32.384+02:00  INFO 11628 --- [demo] [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 10.883 seconds (process running for 12.575)
+2025-01-16T11:24:33.260+02:00  INFO 11628 --- [demo] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-01-16T11:24:33.261+02:00  INFO 11628 --- [demo] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2026af0]]
+2025-01-16T11:24:33.261+02:00  INFO 11628 --- [demo] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-01-16T11:24:33.270+02:00  INFO 11628 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16T11:24:33.275+02:00  INFO 11628 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-16T11:24:33.286+02:00  INFO 11628 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-01-17 03:05:27 |  | Starting DemoApplicationTests using Java 21.0.5 with PID 9440 (started by Shaked in c:\Users\Shaked\GitHub\HIT\EasyWear - Java Web Development Project\Spring\demo)
+2025-01-17 03:05:27 |  | Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-17 03:05:27 |  | No active profile set, falling back to 1 default profile: "default"
+2025-01-17 03:05:29 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-17 03:05:29 |  | Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-17 03:05:29 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-17 03:05:29 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.employee.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-17 03:05:29 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.inventory.InventoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-17 03:05:29 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.log.AuditLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-17 03:05:29 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.sales.SalesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-17 03:05:29 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-17 03:05:29 |  | Finished Spring Data repository scanning in 61 ms. Found 0 JDBC repository interfaces.
+2025-01-17 03:05:29 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-17 03:05:29 |  | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-17 03:05:30 |  | Finished Spring Data repository scanning in 69 ms. Found 6 JPA repository interfaces.
+2025-01-17 03:05:31 |  | HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-17 03:05:31 |  | HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-17 03:05:31 |  | HHH000026: Second-level cache disabled
+2025-01-17 03:05:32 |  | No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-17 03:05:32 |  | HikariPool-1 - Starting...
+2025-01-17 03:05:33 |  | HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: d51996ab-316f-42d9-aad8-9e74f2df7b46
+2025-01-17 03:05:33 |  | HikariPool-1 - Start completed.
+2025-01-17 03:05:33 |  | HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-17 03:05:33 |  | HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-17 03:05:34 |  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-17 03:05:34 |  | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-17 03:05:36 |  | spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-17 03:05:36 |  | Found 3 UserDetailsService beans, with names [combinedUserDetailsService, employeeService, userService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-01-17 03:05:37 |  | Exposing 1 endpoint beneath base path '/actuator'
+2025-01-17 03:05:39 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-17 03:05:39 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.Instant as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-17 03:05:39 |  | Starting...
+2025-01-17 03:05:39 |  | BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@22a7ff5d]]
+2025-01-17 03:05:39 |  | Started.
+2025-01-17 03:05:39 |  | Started DemoApplicationTests in 12.825 seconds (process running for 15.141)
+2025-01-17 03:05:40 |  | Stopping...
+2025-01-17 03:05:40 |  | BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@22a7ff5d]]
+2025-01-17 03:05:40 |  | Stopped.
+2025-01-17 03:05:40 |  | Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-17 03:05:40 |  | HikariPool-1 - Shutdown initiated...
+2025-01-17 03:05:40 |  | HikariPool-1 - Shutdown completed.
+2025-01-17 22:00:22 |  | Starting DemoApplicationTests using Java 21.0.5 with PID 19740 (started by Shaked in c:\Users\Shaked\GitHub\HIT\EasyWear - Java Web Development Project\Spring\demo)
+2025-01-17 22:00:22 |  | Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-17 22:00:22 |  | No active profile set, falling back to 1 default profile: "default"
+2025-01-17 22:00:27 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-17 22:00:27 |  | Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-17 22:00:27 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-17 22:00:27 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.employee.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-17 22:00:27 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.inventory.InventoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-17 22:00:27 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.log.AuditLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-17 22:00:27 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.sales.SalesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-17 22:00:27 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-17 22:00:27 |  | Finished Spring Data repository scanning in 135 ms. Found 0 JDBC repository interfaces.
+2025-01-17 22:00:27 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-17 22:00:27 |  | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-17 22:00:27 |  | Finished Spring Data repository scanning in 134 ms. Found 6 JPA repository interfaces.
+2025-01-17 22:00:31 |  | HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-17 22:00:31 |  | HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-17 22:00:31 |  | HHH000026: Second-level cache disabled
+2025-01-17 22:00:33 |  | No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-17 22:00:33 |  | HikariPool-1 - Starting...
+2025-01-17 22:00:34 |  | HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 3076aa25-d32f-45fc-9ec4-8c32be90cdfc
+2025-01-17 22:00:34 |  | HikariPool-1 - Start completed.
+2025-01-17 22:00:34 |  | HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-17 22:00:35 |  | HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-17 22:00:38 |  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-17 22:00:38 |  | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-17 22:00:44 |  | spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-17 22:00:44 |  | Found 3 UserDetailsService beans, with names [combinedUserDetailsService, employeeService, userService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-01-17 22:00:48 |  | Exposing 1 endpoint beneath base path '/actuator'
+2025-01-17 22:00:51 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-17 22:00:51 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.Instant as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-17 22:00:51 |  | Starting...
+2025-01-17 22:00:51 |  | BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@181cafd]]
+2025-01-17 22:00:51 |  | Started.
+2025-01-17 22:00:51 |  | Started DemoApplicationTests in 30.444 seconds (process running for 33.378)
+2025-01-17 22:00:53 |  | Stopping...
+2025-01-17 22:00:53 |  | BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@181cafd]]
+2025-01-17 22:00:53 |  | Stopped.
+2025-01-17 22:00:53 |  | Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-17 22:00:53 |  | HikariPool-1 - Shutdown initiated...
+2025-01-17 22:00:53 |  | HikariPool-1 - Shutdown completed.
+2025-01-19 02:02:51 |  | Starting DemoApplicationTests using Java 21.0.5 with PID 24976 (started by Shaked in c:\Users\Shaked\GitHub\HIT\EasyWear - Java Web Development Project\Spring\demo)
+2025-01-19 02:02:51 |  | Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-19 02:02:51 |  | No active profile set, falling back to 1 default profile: "default"
+2025-01-19 02:02:54 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 02:02:54 |  | Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-19 02:02:54 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 02:02:54 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.employee.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 02:02:54 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.inventory.InventoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 02:02:54 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.log.AuditLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 02:02:54 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.sales.SalesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 02:02:54 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 02:02:54 |  | Finished Spring Data repository scanning in 78 ms. Found 0 JDBC repository interfaces.
+2025-01-19 02:02:54 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 02:02:54 |  | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-19 02:02:54 |  | Finished Spring Data repository scanning in 73 ms. Found 6 JPA repository interfaces.
+2025-01-19 02:02:58 |  | HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-19 02:02:58 |  | HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-19 02:02:58 |  | HHH000026: Second-level cache disabled
+2025-01-19 02:02:59 |  | No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-19 02:02:59 |  | HikariPool-1 - Starting...
+2025-01-19 02:03:00 |  | HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 3e9e4ab4-3bd3-4d55-bccd-5eafc46d3009
+2025-01-19 02:03:00 |  | HikariPool-1 - Start completed.
+2025-01-19 02:03:00 |  | HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-19 02:03:00 |  | HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-19 02:03:03 |  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-19 02:03:03 |  | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 02:03:06 |  | spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-19 02:03:06 |  | Found 3 UserDetailsService beans, with names [combinedUserDetailsService, employeeService, userService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-01-19 02:03:08 |  | Exposing 1 endpoint beneath base path '/actuator'
+2025-01-19 02:03:10 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 02:03:10 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.Instant as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 02:03:10 |  | Starting...
+2025-01-19 02:03:10 |  | BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@3094111c]]
+2025-01-19 02:03:10 |  | Started.
+2025-01-19 02:03:10 |  | Started DemoApplicationTests in 19.78 seconds (process running for 22.359)
+2025-01-19 02:03:12 |  | Stopping...
+2025-01-19 02:03:12 |  | BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@3094111c]]
+2025-01-19 02:03:12 |  | Stopped.
+2025-01-19 02:03:12 |  | Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 02:03:12 |  | HikariPool-1 - Shutdown initiated...
+2025-01-19 02:03:12 |  | HikariPool-1 - Shutdown completed.
+2025-01-19 02:19:14 |  | Starting DemoApplicationTests using Java 21.0.5 with PID 32968 (started by Shaked in c:\Users\Shaked\GitHub\HIT\EasyWear - Java Web Development Project\Spring\demo)
+2025-01-19 02:19:14 |  | Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-19 02:19:14 |  | No active profile set, falling back to 1 default profile: "default"
+2025-01-19 02:19:18 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 02:19:18 |  | Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-19 02:19:18 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 02:19:18 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.employee.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 02:19:18 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.inventory.InventoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 02:19:18 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.log.AuditLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 02:19:18 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.sales.SalesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 02:19:18 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 02:19:18 |  | Finished Spring Data repository scanning in 111 ms. Found 0 JDBC repository interfaces.
+2025-01-19 02:19:18 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 02:19:18 |  | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-19 02:19:18 |  | Finished Spring Data repository scanning in 77 ms. Found 6 JPA repository interfaces.
+2025-01-19 02:19:21 |  | HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-19 02:19:21 |  | HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-19 02:19:21 |  | HHH000026: Second-level cache disabled
+2025-01-19 02:19:22 |  | No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-19 02:19:22 |  | HikariPool-1 - Starting...
+2025-01-19 02:19:24 |  | HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: e557f9a2-c24c-4bb1-be92-ea65bdf4b6bc
+2025-01-19 02:19:24 |  | HikariPool-1 - Start completed.
+2025-01-19 02:19:24 |  | HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-19 02:19:24 |  | HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-19 02:19:25 |  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-19 02:19:25 |  | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 02:19:29 |  | spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-19 02:19:29 |  | Found 3 UserDetailsService beans, with names [combinedUserDetailsService, employeeService, userService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-01-19 02:19:31 |  | Exposing 1 endpoint beneath base path '/actuator'
+2025-01-19 02:19:34 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 02:19:34 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.Instant as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 02:19:34 |  | Starting...
+2025-01-19 02:19:34 |  | BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@3094111c]]
+2025-01-19 02:19:34 |  | Started.
+2025-01-19 02:19:35 |  | Started DemoApplicationTests in 22.308 seconds (process running for 25.841)
+2025-01-19 02:19:37 |  | Stopping...
+2025-01-19 02:19:37 |  | BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@3094111c]]
+2025-01-19 02:19:37 |  | Stopped.
+2025-01-19 02:19:37 |  | Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 02:19:37 |  | HikariPool-1 - Shutdown initiated...
+2025-01-19 02:19:37 |  | HikariPool-1 - Shutdown completed.
+2025-01-19 16:46:27 |  | Starting DemoApplicationTests using Java 21.0.5 with PID 34332 (started by Shaked in c:\Users\Shaked\GitHub\HIT\EasyWear - Java Web Development Project\Spring\demo)
+2025-01-19 16:46:27 |  | Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-19 16:46:27 |  | No active profile set, falling back to 1 default profile: "default"
+2025-01-19 16:46:30 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 16:46:30 |  | Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-19 16:46:30 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 16:46:30 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.employee.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 16:46:30 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.inventory.InventoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 16:46:30 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.log.AuditLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 16:46:30 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.sales.SalesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 16:46:30 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 16:46:30 |  | Finished Spring Data repository scanning in 97 ms. Found 0 JDBC repository interfaces.
+2025-01-19 16:46:30 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 16:46:30 |  | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-19 16:46:30 |  | Finished Spring Data repository scanning in 78 ms. Found 6 JPA repository interfaces.
+2025-01-19 16:46:32 |  | HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-19 16:46:33 |  | HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-19 16:46:33 |  | HHH000026: Second-level cache disabled
+2025-01-19 16:46:34 |  | No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-19 16:46:34 |  | HikariPool-1 - Starting...
+2025-01-19 16:46:35 |  | HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 6d697e19-f310-4d70-ac43-090c2c1adba3
+2025-01-19 16:46:35 |  | HikariPool-1 - Start completed.
+2025-01-19 16:46:35 |  | HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-19 16:46:35 |  | HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-19 16:46:37 |  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-19 16:46:37 |  | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 16:46:40 |  | spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-19 16:46:40 |  | Found 3 UserDetailsService beans, with names [combinedUserDetailsService, employeeService, userService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-01-19 16:46:42 |  | Exposing 1 endpoint beneath base path '/actuator'
+2025-01-19 16:46:44 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 16:46:44 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.Instant as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 16:46:45 |  | Starting...
+2025-01-19 16:46:45 |  | BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@181cafd]]
+2025-01-19 16:46:45 |  | Started.
+2025-01-19 16:46:45 |  | Started DemoApplicationTests in 18.643 seconds (process running for 21.866)
+2025-01-19 16:46:46 |  | Stopping...
+2025-01-19 16:46:46 |  | BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@181cafd]]
+2025-01-19 16:46:46 |  | Stopped.
+2025-01-19 16:46:46 |  | Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 16:46:46 |  | HikariPool-1 - Shutdown initiated...
+2025-01-19 16:46:46 |  | HikariPool-1 - Shutdown completed.
+2025-01-19 17:02:37 |  | Starting DemoApplicationTests using Java 21.0.5 with PID 35372 (started by Shaked in c:\Users\Shaked\GitHub\HIT\EasyWear - Java Web Development Project\Spring\demo)
+2025-01-19 17:02:37 |  | Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-19 17:02:37 |  | No active profile set, falling back to 1 default profile: "default"
+2025-01-19 17:02:41 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 17:02:41 |  | Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-19 17:02:41 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:02:41 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.employee.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:02:41 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.inventory.InventoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:02:41 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.log.AuditLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:02:41 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.sales.SalesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:02:41 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:02:41 |  | Finished Spring Data repository scanning in 116 ms. Found 0 JDBC repository interfaces.
+2025-01-19 17:02:42 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 17:02:42 |  | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-19 17:02:42 |  | Finished Spring Data repository scanning in 152 ms. Found 6 JPA repository interfaces.
+2025-01-19 17:02:45 |  | HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-19 17:02:45 |  | HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-19 17:02:45 |  | HHH000026: Second-level cache disabled
+2025-01-19 17:02:46 |  | No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-19 17:02:47 |  | HikariPool-1 - Starting...
+2025-01-19 17:02:48 |  | HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 79e2370d-2165-40a7-a7ab-1b3abe6a0f72
+2025-01-19 17:02:48 |  | HikariPool-1 - Start completed.
+2025-01-19 17:02:48 |  | HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-19 17:02:48 |  | HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-19 17:02:53 |  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-19 17:02:53 |  | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 17:02:58 |  | spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-19 17:02:58 |  | Found 3 UserDetailsService beans, with names [combinedUserDetailsService, employeeService, userService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-01-19 17:03:00 |  | Exposing 1 endpoint beneath base path '/actuator'
+2025-01-19 17:03:03 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 17:03:03 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.Instant as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 17:03:04 |  | Starting...
+2025-01-19 17:03:04 |  | BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@13ea9afc]]
+2025-01-19 17:03:04 |  | Started.
+2025-01-19 17:03:04 |  | Started DemoApplicationTests in 28.196 seconds (process running for 32.829)
+2025-01-19 17:03:05 |  | Stopping...
+2025-01-19 17:03:05 |  | BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@13ea9afc]]
+2025-01-19 17:03:05 |  | Stopped.
+2025-01-19 17:03:05 |  | Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 17:03:05 |  | HikariPool-1 - Shutdown initiated...
+2025-01-19 17:03:05 |  | HikariPool-1 - Shutdown completed.
+2025-01-19 17:11:47 |  | Starting DemoApplicationTests using Java 21.0.5 with PID 30396 (started by Shaked in c:\Users\Shaked\GitHub\HIT\EasyWear - Java Web Development Project\Spring\demo)
+2025-01-19 17:11:47 |  | Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-19 17:11:47 |  | No active profile set, falling back to 1 default profile: "default"
+2025-01-19 17:11:51 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 17:11:51 |  | Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-19 17:11:51 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:11:51 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.employee.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:11:51 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.inventory.InventoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:11:51 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.log.AuditLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:11:51 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.sales.SalesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:11:51 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:11:51 |  | Finished Spring Data repository scanning in 155 ms. Found 0 JDBC repository interfaces.
+2025-01-19 17:11:51 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 17:11:51 |  | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-19 17:11:51 |  | Finished Spring Data repository scanning in 107 ms. Found 6 JPA repository interfaces.
+2025-01-19 17:11:54 |  | HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-19 17:11:55 |  | HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-19 17:11:55 |  | HHH000026: Second-level cache disabled
+2025-01-19 17:11:56 |  | No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-19 17:11:56 |  | HikariPool-1 - Starting...
+2025-01-19 17:11:57 |  | HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 49b50700-b7a6-451b-903c-06cc623d43a0
+2025-01-19 17:11:57 |  | HikariPool-1 - Start completed.
+2025-01-19 17:11:57 |  | HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-19 17:11:57 |  | HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-19 17:11:59 |  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-19 17:12:00 |  | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 17:12:04 |  | spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-19 17:12:04 |  | Found 3 UserDetailsService beans, with names [combinedUserDetailsService, employeeService, userService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-01-19 17:12:06 |  | Exposing 1 endpoint beneath base path '/actuator'
+2025-01-19 17:12:08 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 17:12:08 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.Instant as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 17:12:08 |  | Starting...
+2025-01-19 17:12:08 |  | BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@6c30efc4]]
+2025-01-19 17:12:08 |  | Started.
+2025-01-19 17:12:08 |  | Started DemoApplicationTests in 23.359 seconds (process running for 27.286)
+2025-01-19 17:12:10 |  | Stopping...
+2025-01-19 17:12:10 |  | BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@6c30efc4]]
+2025-01-19 17:12:10 |  | Stopped.
+2025-01-19 17:12:10 |  | Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 17:12:10 |  | HikariPool-1 - Shutdown initiated...
+2025-01-19 17:12:10 |  | HikariPool-1 - Shutdown completed.
+2025-01-19 17:18:57 |  | Starting DemoApplicationTests using Java 21.0.5 with PID 34196 (started by Shaked in c:\Users\Shaked\GitHub\HIT\EasyWear - Java Web Development Project\Spring\demo)
+2025-01-19 17:18:57 |  | Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-19 17:18:57 |  | No active profile set, falling back to 1 default profile: "default"
+2025-01-19 17:19:01 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 17:19:01 |  | Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-19 17:19:01 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:19:01 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.employee.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:19:01 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.inventory.InventoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:19:01 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.log.AuditLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:19:01 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.sales.SalesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:19:01 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:19:01 |  | Finished Spring Data repository scanning in 128 ms. Found 0 JDBC repository interfaces.
+2025-01-19 17:19:01 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 17:19:01 |  | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-19 17:19:01 |  | Finished Spring Data repository scanning in 122 ms. Found 6 JPA repository interfaces.
+2025-01-19 17:19:05 |  | HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-19 17:19:05 |  | HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-19 17:19:05 |  | HHH000026: Second-level cache disabled
+2025-01-19 17:19:07 |  | No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-19 17:19:07 |  | HikariPool-1 - Starting...
+2025-01-19 17:19:09 |  | HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 7baf01f9-cc56-4e20-844c-a17bd7734b45
+2025-01-19 17:19:09 |  | HikariPool-1 - Start completed.
+2025-01-19 17:19:09 |  | HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-19 17:19:09 |  | HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-19 17:19:13 |  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-19 17:19:13 |  | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 17:19:17 |  | spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-19 17:19:17 |  | Found 3 UserDetailsService beans, with names [combinedUserDetailsService, employeeService, userService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-01-19 17:19:20 |  | Exposing 1 endpoint beneath base path '/actuator'
+2025-01-19 17:19:23 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 17:19:23 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.Instant as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 17:19:23 |  | Starting...
+2025-01-19 17:19:23 |  | BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@51db8b10]]
+2025-01-19 17:19:23 |  | Started.
+2025-01-19 17:19:23 |  | Started DemoApplicationTests in 27.758 seconds (process running for 32.167)
+2025-01-19 17:19:26 |  | Stopping...
+2025-01-19 17:19:26 |  | BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@51db8b10]]
+2025-01-19 17:19:26 |  | Stopped.
+2025-01-19 17:19:26 |  | Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 17:19:26 |  | HikariPool-1 - Shutdown initiated...
+2025-01-19 17:19:26 |  | HikariPool-1 - Shutdown completed.
+2025-01-19 17:28:19 |  | Starting DemoApplicationTests using Java 21.0.5 with PID 26000 (started by Shaked in c:\Users\Shaked\GitHub\HIT\EasyWear - Java Web Development Project\Spring\demo)
+2025-01-19 17:28:19 |  | Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-19 17:28:19 |  | No active profile set, falling back to 1 default profile: "default"
+2025-01-19 17:28:23 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 17:28:23 |  | Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-19 17:28:23 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:28:23 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.employee.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:28:23 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.inventory.InventoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:28:23 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.log.AuditLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:28:23 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.sales.SalesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:28:23 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:28:23 |  | Finished Spring Data repository scanning in 153 ms. Found 0 JDBC repository interfaces.
+2025-01-19 17:28:23 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 17:28:23 |  | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-19 17:28:23 |  | Finished Spring Data repository scanning in 146 ms. Found 6 JPA repository interfaces.
+2025-01-19 17:28:26 |  | HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-19 17:28:27 |  | HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-19 17:28:27 |  | HHH000026: Second-level cache disabled
+2025-01-19 17:28:28 |  | No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-19 17:28:28 |  | HikariPool-1 - Starting...
+2025-01-19 17:28:29 |  | HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 715d281d-9b13-4a2b-87b6-3acbd937bcc9
+2025-01-19 17:28:29 |  | HikariPool-1 - Start completed.
+2025-01-19 17:28:29 |  | HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-19 17:28:29 |  | HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-19 17:28:31 |  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-19 17:28:32 |  | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 17:28:35 |  | spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-19 17:28:36 |  | Found 3 UserDetailsService beans, with names [combinedUserDetailsService, employeeService, userService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-01-19 17:28:38 |  | Exposing 1 endpoint beneath base path '/actuator'
+2025-01-19 17:28:40 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 17:28:40 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.Instant as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 17:28:41 |  | Starting...
+2025-01-19 17:28:41 |  | BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@1a48e48e]]
+2025-01-19 17:28:41 |  | Started.
+2025-01-19 17:28:41 |  | Started DemoApplicationTests in 23.586 seconds (process running for 28.569)
+2025-01-19 17:28:43 |  | Stopping...
+2025-01-19 17:28:43 |  | BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@1a48e48e]]
+2025-01-19 17:28:43 |  | Stopped.
+2025-01-19 17:28:43 |  | Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 17:28:43 |  | HikariPool-1 - Shutdown initiated...
+2025-01-19 17:28:43 |  | HikariPool-1 - Shutdown completed.
+2025-01-19 17:40:09 |  | Starting DemoApplicationTests using Java 21.0.5 with PID 26004 (started by Shaked in c:\Users\Shaked\GitHub\HIT\EasyWear - Java Web Development Project\Spring\demo)
+2025-01-19 17:40:09 |  | Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-19 17:40:09 |  | No active profile set, falling back to 1 default profile: "default"
+2025-01-19 17:40:14 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 17:40:14 |  | Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-19 17:40:14 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:40:14 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.employee.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:40:14 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.inventory.InventoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:40:14 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.log.AuditLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:40:14 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.sales.SalesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:40:14 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 17:40:14 |  | Finished Spring Data repository scanning in 170 ms. Found 0 JDBC repository interfaces.
+2025-01-19 17:40:14 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 17:40:14 |  | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-19 17:40:15 |  | Finished Spring Data repository scanning in 161 ms. Found 6 JPA repository interfaces.
+2025-01-19 17:40:19 |  | HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-19 17:40:19 |  | HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-19 17:40:19 |  | HHH000026: Second-level cache disabled
+2025-01-19 17:40:20 |  | No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-19 17:40:20 |  | HikariPool-1 - Starting...
+2025-01-19 17:40:21 |  | HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 663279d1-1980-4858-8666-c704e70fc503
+2025-01-19 17:40:21 |  | HikariPool-1 - Start completed.
+2025-01-19 17:40:21 |  | HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-19 17:40:21 |  | HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-19 17:40:24 |  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-19 17:40:24 |  | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 17:40:29 |  | spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-19 17:40:29 |  | Found 3 UserDetailsService beans, with names [combinedUserDetailsService, employeeService, userService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-01-19 17:40:33 |  | Exposing 1 endpoint beneath base path '/actuator'
+2025-01-19 17:40:36 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 17:40:36 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.Instant as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 17:40:36 |  | Starting...
+2025-01-19 17:40:36 |  | BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@51db8b10]]
+2025-01-19 17:40:36 |  | Started.
+2025-01-19 17:40:36 |  | Started DemoApplicationTests in 28.424 seconds (process running for 32.901)
+2025-01-19 17:40:38 |  | Stopping...
+2025-01-19 17:40:38 |  | BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@51db8b10]]
+2025-01-19 17:40:38 |  | Stopped.
+2025-01-19 17:40:38 |  | Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 17:40:38 |  | HikariPool-1 - Shutdown initiated...
+2025-01-19 17:40:38 |  | HikariPool-1 - Shutdown completed.
+2025-01-19 18:04:18 |  | Starting DemoApplicationTests using Java 21.0.5 with PID 12008 (started by Shaked in c:\Users\Shaked\GitHub\HIT\EasyWear - Java Web Development Project\Spring\demo)
+2025-01-19 18:04:18 |  | Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-19 18:04:18 |  | No active profile set, falling back to 1 default profile: "default"
+2025-01-19 18:04:22 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 18:04:22 |  | Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-19 18:04:22 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 18:04:22 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.employee.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 18:04:22 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.inventory.InventoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 18:04:22 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.log.AuditLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 18:04:22 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.sales.SalesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 18:04:22 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 18:04:22 |  | Finished Spring Data repository scanning in 302 ms. Found 0 JDBC repository interfaces.
+2025-01-19 18:04:23 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 18:04:23 |  | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-19 18:04:23 |  | Finished Spring Data repository scanning in 142 ms. Found 6 JPA repository interfaces.
+2025-01-19 18:04:26 |  | HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-19 18:04:27 |  | HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-19 18:04:27 |  | HHH000026: Second-level cache disabled
+2025-01-19 18:04:29 |  | No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-19 18:04:29 |  | HikariPool-1 - Starting...
+2025-01-19 18:04:30 |  | HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 53b8abb5-d9d2-4688-852a-83bae944b136
+2025-01-19 18:04:30 |  | HikariPool-1 - Start completed.
+2025-01-19 18:04:30 |  | HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-19 18:04:30 |  | HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-19 18:04:34 |  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-19 18:04:34 |  | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 18:04:39 |  | spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-19 18:04:39 |  | Found 3 UserDetailsService beans, with names [combinedUserDetailsService, employeeService, userService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-01-19 18:04:41 |  | Exposing 1 endpoint beneath base path '/actuator'
+2025-01-19 18:04:45 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 18:04:45 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.Instant as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 18:04:45 |  | Starting...
+2025-01-19 18:04:45 |  | BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@59f2a9e9]]
+2025-01-19 18:04:45 |  | Started.
+2025-01-19 18:04:45 |  | Started DemoApplicationTests in 28.865 seconds (process running for 32.792)
+2025-01-19 18:04:47 |  | Stopping...
+2025-01-19 18:04:47 |  | BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@59f2a9e9]]
+2025-01-19 18:04:47 |  | Stopped.
+2025-01-19 18:04:47 |  | Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 18:04:47 |  | HikariPool-1 - Shutdown initiated...
+2025-01-19 18:04:47 |  | HikariPool-1 - Shutdown completed.
+2025-01-19 18:06:00 |  | Starting DemoApplicationTests using Java 21.0.5 with PID 34700 (started by Shaked in c:\Users\Shaked\GitHub\HIT\EasyWear - Java Web Development Project\Spring\demo)
+2025-01-19 18:06:00 |  | Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-19 18:06:00 |  | No active profile set, falling back to 1 default profile: "default"
+2025-01-19 18:06:04 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 18:06:04 |  | Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-19 18:06:04 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 18:06:04 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.employee.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 18:06:04 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.inventory.InventoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 18:06:04 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.log.AuditLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 18:06:04 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.sales.SalesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 18:06:04 |  | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-01-19 18:06:04 |  | Finished Spring Data repository scanning in 151 ms. Found 0 JDBC repository interfaces.
+2025-01-19 18:06:04 |  | Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 18:06:04 |  | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-19 18:06:04 |  | Finished Spring Data repository scanning in 125 ms. Found 6 JPA repository interfaces.
+2025-01-19 18:06:09 |  | HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-19 18:06:09 |  | HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-19 18:06:09 |  | HHH000026: Second-level cache disabled
+2025-01-19 18:06:10 |  | No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-19 18:06:10 |  | HikariPool-1 - Starting...
+2025-01-19 18:06:11 |  | HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: f0ff15e0-2c7a-44e7-a682-a03cbf43e073
+2025-01-19 18:06:11 |  | HikariPool-1 - Start completed.
+2025-01-19 18:06:11 |  | HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-19 18:06:12 |  | HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-19 18:06:14 |  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-19 18:06:14 |  | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 18:06:18 |  | spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-19 18:06:18 |  | Found 3 UserDetailsService beans, with names [combinedUserDetailsService, employeeService, userService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-01-19 18:06:20 |  | Exposing 1 endpoint beneath base path '/actuator'
+2025-01-19 18:06:23 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 18:06:23 |  | Registering converter from class microsoft.sql.DateTimeOffset to class java.time.Instant as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-01-19 18:06:24 |  | Starting...
+2025-01-19 18:06:24 |  | BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4c006046]]
+2025-01-19 18:06:24 |  | Started.
+2025-01-19 18:06:24 |  | Started DemoApplicationTests in 25.801 seconds (process running for 29.985)
+2025-01-19 18:06:25 |  | Stopping...
+2025-01-19 18:06:25 |  | BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4c006046]]
+2025-01-19 18:06:25 |  | Stopped.
+2025-01-19 18:06:25 |  | Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-19 18:06:25 |  | HikariPool-1 - Shutdown initiated...
+2025-01-19 18:06:25 |  | HikariPool-1 - Shutdown completed.

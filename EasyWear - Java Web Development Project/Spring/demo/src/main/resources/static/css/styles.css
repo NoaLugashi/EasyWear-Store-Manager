@@ -1,0 +1,536 @@
+
+        body {
+            background-color: #ffffff; /* Soft beige */
+            color: #4E342E; /* Rich brown */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            background-size: cover;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Allow scrolling */
+            margin: 0;
+            padding: 0;
+            flex-direction: column;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url('../image/background-login.webp') no-repeat center center fixed;
+            background-size: cover;
+            opacity:0.3; /* Adjust opacity for transparency */
+            z-index: -1; /* Ensure the background stays behind content */
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            background-color: #4E342E; /* Dark brown */
+            color: #FFF8E1; /* Light cream */
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        /* Sidebar Title */
+        .sidebar .title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px;
+            border-bottom: 2px solid #8D6E63; /* Light brown border */
+        }
+
+        /* Sidebar Links */
+        .sidebar a {
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #FFF8E1; /* Light cream */
+            display: block;
+            border-bottom: 1px solid #8D6E63;
+            transition: background-color 0.3s ease;
+            text-align: center;
+
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            background-color: #6D4C41; /* Warm brown */
+        }
+
+        /* Main Content */
+        .content {
+            margin-left: 260px; /* Matches sidebar width */
+            padding: 20px;   
+        }
+
+        /* Titles (Centered) */
+        .header {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #4E342E; /* Dark brown */
+        }
+
+        /* Form Container */
+        .form-container {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #F5F5F5; /* Light grey background */
+            border: 1px solid #8D6E63; /* Light brown */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            overflow: hidden; /* Ensures no content overflows */
+        }
+
+        /* Form Fields */
+        .form-container input, 
+        .form-container select, 
+        .form-container button {
+            width: 100%; /* Matches the input field size */
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #8D6E63;
+            border-radius: 5px;
+            background-color: #ffffff; /* White background */
+            color: #4E342E; /* Dark brown text */
+            box-sizing: border-box; /* Includes padding and border in width */
+            text-align: center; /* Aligns text to the left */
+        }
+
+        /* Buttons Inside the Form */
+        .form-container button {
+            background-color: #8D6E63; /* Light brown */
+            color: #faf7ee; /* Light cream */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #6D4C41; /* Darker chocolate brown */
+        }
+
+        /* Flexible BTN Button (Outside the Form) */
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #8D6E63; /* Chocolate brown */
+            color: #fbf7ed; /* Light cream text */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px; /* Adds spacing */
+            transition: background-color 0.3s ease;
+            text-align: center; /* Aligns text to the left */
+        }
+
+        .btn:hover {
+            background-color: #5D4037; /* Slightly darker chocolate */
+        }
+
+
+        /* Logout Button */
+        .logout-btn {
+            background-color: #8D6E63; /* Light chocolate brown */
+            color: #faf7ee; /* Light cream */
+            margin: 20px;
+            text-align: center;
+            font-size: 16px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: #6D4C41; /* Darker chocolate brown */
+        }
+
+        /* Chat Box */
+        #chat {
+            padding: 15px;
+        }
+        
+        #chat .header {
+            font-size: 18px;
+            text-align: center;
+            color: #4a2c2a; /* גוון חום כהה */
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .username-page-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background-color: #f6ebe4; /* רקע חום בהיר */
+            border: 1px solid #d4b9a3; /* מסגרת חומה עדינה */
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .username-page-container .title {
+            font-size: 14px;
+            color: #4a2c2a; /* גוון חום בינוני */
+            text-align: center;
+        }
+        
+        .username-page-container input[type="text"] {
+            width: 100%;
+            max-width: 300px;
+            padding: 8px;
+            border: 1px solid #d4b9a3;
+            border-radius: 4px;
+            font-size: 12px;
+            transition: border-color 0.2s;
+            background-color: #fdfaf6; /* רקע בהיר */
+        }
+        
+        .username-page-container input[type="text"]:focus {
+            border-color: #b78e6c; /* חום מעט כהה */
+        }
+        
+        .username-page-container button {
+            width: 100%;
+            max-width: 150px;
+            padding: 8px;
+            font-size: 12px;
+            color: #fff;
+            background-color: #8D6E63; /* גוון חום בינוני */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .username-page-container button:hover {
+            background-color: #6D4C41; /* חום כהה יותר */
+        }
+        
+        .chat-container {
+            border: 1px solid #d4b9a3;
+            border-radius: 5px;
+            background-color: #fdfaf6;
+            padding: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chat-header {
+            color: white;
+            padding: 10px;
+            border-radius: 4px 4px 0 0;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .connecting {
+            font-size: 12px;
+            color: #4a2c2a;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        #messageArea {
+            list-style: none;
+            padding: 8px;
+            border: 1px solid #d4b9a3;
+            border-radius: 4px;
+            height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            font-size: 12px;
+            background-color: #f6ebe4;
+        }
+        
+        #messageArea li {
+            padding: 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            background-color: #f9f4f0;
+            color: #4a2c2a;
+            font-size: 12px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .input-group input[type="text"] {
+            flex-grow: 1;
+            padding: 8px;
+            font-size: 12px;
+            border: 1px solid #d4b9a3;
+            border-radius: 4px;
+            background-color: #fdfaf6;
+        }
+        
+        .input-group button {
+            padding: 8px;
+            font-size: 12px;
+            color: #fff;
+            background-color: #8D6E63;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .input-group button:hover {
+            background-color: #6D4C41;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .username-page-container,
+            .chat-container {
+                padding: 10px;
+            }
+        
+            .input-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        
+            .input-group input[type="text"] {
+                width: 100%;
+            }
+        
+            .input-group button {
+                width: 100%;
+            }
+        }
+
+        
+        /* General Styling for Log Viewer */
+        #logs {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #FAF9F6; /* Soft beige */
+            border: 1px solid #D3CBB8; /* Subtle light brown */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Gentle shadow */
+        }
+
+        /* Log List Container */
+        #logs #logList {
+            max-height: 400px; /* Restrict height for scrollable area */
+            overflow-y: auto; /* Enable vertical scrolling */
+            border: 1px solid #D3CBB8; /* Subtle light brown border */
+            border-radius: 5px;
+            background-color: #FDFCFB; /* Very light cream */
+            padding: 10px;
+        }
+
+        /* Individual Log Entry */
+        #logs #logList .log-entry {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #E6DED4; /* Light tan */
+            border-radius: 5px;
+            background-color: #FFFFFF; /* White */
+            color: #5C5240; /* Muted dark brown */
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05); /* Gentle shadow */
+        }
+
+        /* Error Logs */
+        #logs #logList .log-entry.error {
+            background-color: #FDECEC; /* Soft pink for errors */
+            border-color: #E4B5B5; /* Light muted red border */
+            color: #C47A7A; /* Muted red text */
+        }
+
+        /* Info Logs */
+        #logs #logList .log-entry.info {
+            background-color: #EDF7ED; /* Soft mint green */
+            border-color: #BFD8BF; /* Light muted green */
+            color: #7CA97C; /* Muted green text */
+        }
+
+        /* Warning Logs */
+        #logs #logList .log-entry.warn {
+            background-color: #FFF7EB; /* Soft peach */
+            border-color: #E8D6BA; /* Muted beige border */
+            color: #C9A475; /* Muted orange text */
+        }
+
+        /* Debug Logs */
+        #logs #logList .log-entry.debug {
+            background-color: #EEF3FA; /* Soft pastel blue */
+            border-color: #B8C8E1; /* Light muted blue */
+            color: #7A96C4; /* Muted blue text */
+        }
+
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fbf7eb; /* Light cream */
+            border: 1px solid #8D6E63;
+        }
+
+        table th, table td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #8D6E63;
+        }
+
+        table th {
+            background-color: #6D4C41; /* Chocolate brown */
+            color: #fbf7eb; /* Light cream text */
+            font-size: 14px;
+            text-align: center; /* Aligns text to the left */
+
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #fbf7eb; /* Light grey */
+        }
+
+        table tbody tr:hover {
+            background-color: #fbf7eb; /* Light greyish-brown */
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            color: #6D4C41; /* Chocolate brown */
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #5C5240; /* Muted dark brown */
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .login-container {
+            background-color: #ece4d1; /* Light cream */
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            box-sizing: border-box;
+            text-align: center;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        h2 {
+            color: #8D6E63; /* Rich brown */
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #D3CBB8; /* Light brown */
+            border-radius: 4px;
+            font-size: 14px;
+            color: #4E342E; /* Rich brown */
+            background-color: #FFFFFF; /* White background */
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border-color: #8D6E63; /* Chocolate brown */
+            outline: none;
+        }
+
+        /* User List Styling */
+        #userList {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px; /* Width limit for better readability */
+            background-color: #F5F5F5; /* Light cream */
+            border: 1px solid #8D6E63; /* Light brown border */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            overflow-y: auto; /* Enable scrolling for long lists */
+            max-height: 400px; /* Restrict height */
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Individual User Item */
+        .user-item {
+            font-size: 14px;
+            color: #4E342E; /* Rich brown */
+            margin: 10px 0; /* Space between items */
+            padding: 10px;
+            line-height: 1;
+            background-color: #FFFFFF; /* White background */
+            border: 1px solid #8D6E63; /* Subtle border */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Gentle shadow */
+            display: flex;
+            flex-wrap: wrap; /* Allow text to wrap for long content */
+            gap: 4px; /* Space between elements */
+            justify-content: space-between; /* Align items */
+            align-items: center; /* Center items vertically */
+        }
+
+        /* Highlight on Hover */
+        .user-item:hover {
+            background-color: #F5F5F5; /* Light grey on hover */
+            border-color: #8D6E63; /* Change border color slightly */
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Styling for the Text Inside the User Item */
+        .user-item span {
+            flex: 0.5; /* Ensure spans take equal space */
+            text-align: left; /* Align text to the left */
+        }
+
+
+        /* Individual Employee Item */
+        .employee-item {
+        font-size: 14px; /* Smaller font for compact display */
+        color: #4E342E; /* Rich brown */
+        margin: 5px 0; /* Minimal space between items */
+        padding: 8px 10px; /* Reduced padding inside each item */
+        line-height: 1.4;
+        background-color: #FFFFFF; /* White background */
+        border: 1px solid #E6DED4; /* Subtle border */
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Gentle shadow */
+        display: flex; /* Flexible layout */
+        flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        gap: 15px; /* Reduced gap between elements */
+        }
+
+        /* Styling for Labels */
+        .employee-item strong {
+        color: #8D6E63; /* Chocolate brown for labels */
+        font-weight: bold;
+        display: inline; /* Ensure strong doesn't take extra space */
+        margin-right: 5px; /* Add a small space after the label */
+        white-space: nowrap; /* Prevent label wrapping */
+        }
+
+        /* Styling for Data */
+        .employee-item span {
+        display: inline; /* Ensure span remains inline with strong */
+        }

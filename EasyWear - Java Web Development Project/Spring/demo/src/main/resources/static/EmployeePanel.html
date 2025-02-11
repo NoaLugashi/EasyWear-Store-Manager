@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to shared CSS -->
+</head>
+<body>
+
+    <div class="sidebar">
+        <!-- EasyWear Title added at the top -->
+        <div class="title">EasyWear Employee Dashboard</div>
+        <a href="#" onclick="showTab('Inventory')">Inventory</a>
+        <a href="#" onclick="showTab('Customers')">Customers</a>
+        <a href="#" onclick="showTab('Sales')">Sales & Reports</a>
+        <a href="#" onclick="showTab('chat')">Chat</a>
+
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="content">
+
+        <!-- Inventory Tab -->
+        <div id="Inventory" class="tab-content">
+            <button class="btn" onclick="viewInventory()">View Inventory</button>
+ 
+            <!-- Inventory by Branch -->
+            <h3 class="header">Get Inventory by Branch</h3>
+            <form id="getInventoryByBranchForm" class="form-container">
+                <input type="text" id="branchInput" placeholder="Enter Branch" required>
+                <button class="btn" type="submit">Get Inventory</button>
+            </form>
+
+            <!-- Inventory by Product Name -->
+            <h3 class="header">Get Inventory by Product Name</h3>
+            <form id="getInventoryByProductForm" class="form-container">
+                <input type="text" id="ProductNameInput" placeholder="Enter Product Name" required>
+                <button class="btn" type="submit">Get Inventory</button>
+            </form>
+
+            <!-- Inventory by Product Category -->
+            <h3 class="header">Get Inventory by Product Category</h3>
+            <form id="getInventoryByProductCategoryForm" class="form-container">
+                <input type="text" id="ProductCategoryInput" placeholder="Enter Product Category" required>
+                <button class="btn" type="submit">Get Inventory</button>
+            </form>
+
+            <!-- Add Inventory Item (POST) -->
+            <h3 class="header">Add Inventory</h3>
+            <form id="addInventoryForm" class="form-container">
+                <input type="text" id="productName" placeholder="Product Name" required>
+                <input type="number" id="inventoryQuantity" placeholder="Quantity" required>
+                <input type="number" id="inventoryPrice" placeholder="Price" required>
+                <input type="text" id="productCategory" placeholder="Product Category" required>
+                <input type="text" id="branch" placeholder="Branch" required>
+                <button class="btn" type="submit">Add Item</button>
+            </form>
+
+            <!-- Delete Inventory Item (DELETE) -->
+            <h3 class="header">Delete Inventory</h3>
+            <form id="deleteInventoryForm" class="form-container">
+                <input type="number" id="inventoryId" placeholder="Inventory id" required>
+                <button class="btn" type="submit">Delete Item</button>
+            </form>
+
+            <!-- Inventory Table -->
+            <h3 class="header">Inventory Table</h3>
+            <table id="inventoryTable" class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Inventory ID</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Branch</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Inventory items will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- Customers Tab -->
+        <div id="Customers" class="tab-content">
+            <button class="btn" onclick="viewCustomers()">View Customers</button>
+
+            <!-- Add Customer (POST) -->
+            <h3 class="header">Add Customer</h3>
+            <form id="addCustomerForm" class="form-container">
+                <input type="text" id="customerFullName" placeholder="Full Name" required>
+                <input type="text" id="customerIdNumber" placeholder="ID Number" required>
+                <input type="text" id="customerPhone" placeholder="Phone" required>
+                <input type="text" id="customerType" placeholder="Customer Type" required>
+                <button class="btn" type="submit">Add Customer</button>
+            </form>
+
+            <!-- Delete Customer (DELETE) -->
+            <h3 class="header">Delete Customer</h3>
+            <form id="deleteCustomerForm" class="form-container">
+                <input type="number" id="customerIdToDelete" placeholder="Customer ID" required>
+                <button class="btn" type="submit">Delete Customer</button>
+            </form>
+
+            <!-- Customers Table -->
+            <h3 class="header">Customers Table</h3>
+            <table id="customersTable" class="customers-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Full Name</th>
+                        <th>ID Number</th>
+                        <th>Phone</th>
+                        <th>Customer Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Customer items will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+    
+        <!-- Sales Tab -->
+        <div id="Sales" class="tab-content">
+            <button class="btn" onclick="viewSales()">View Sales</button>
+ 
+            <!-- Sales by Branch -->
+            <h3 class="header">Get Sales Report by Branch</h3>
+            <form id="getSalesByBranchForm" class="form-container">
+                <input type="text" id="SalesbranchInput" placeholder="Enter Branch" required>
+                <button class="btn" type="submit">Get Report</button>
+            </form>
+
+            <!-- Sales by Product Name -->
+            <h3 class="header">Get Sales Report by Product Name</h3>
+            <form id="getSalesByProductForm" class="form-container">
+                <input type="text" id="SalesProductNameInput" placeholder="Enter Product Name" required>
+                <button class="btn" type="submit">Get Report</button>
+            </form>
+
+            <!-- Sales by Product Category -->
+            <h3 class="header">Get Sales Report by Product Category</h3>
+            <form id="getSalesByProductCategoryForm" class="form-container">
+                <input type="text" id="SalesProductCategoryInput" placeholder="Enter Product Category" required>
+                <button class="btn" type="submit">Get Report</button>
+            </form>
+
+            <!-- Add Sales Item (POST) -->
+            <h3 class="header">Add Sale Transaction</h3>
+            <form id="addSalesForm" class="form-container">
+                <input type="text" id="SalescustomertName" placeholder="Customer Name" required>
+				<input type="text" id="SalescustomertType" placeholder="Customer Type" required>
+				<input type="text" id="SalesproductName" placeholder="Product Name" required>
+				<input type="text" id="SalesproductCategory" placeholder="Product Category" required>
+				<input type="number" id="SalesQuantity" placeholder="Quantity" required>
+				<input type="number" id="SalesPrice" placeholder="Price" required>    
+                <input type="text" id="Salesbranch" placeholder="Branch" required>
+                <button class="btn" type="submit">Add Item</button>
+            </form>
+
+            <!-- Add Sale Transaction (buying a product) -->
+            <h3 class="header">Buy Product</h3>
+            <form id="buyProductForm" class="form-container">
+                <input type="number" id="BuycustomerId" placeholder="Customer ID" required>
+                <input type="text" id="BuyproductName" placeholder="Product Name" required>
+                <input type="number" id="Buyquantity" placeholder="Quantity" required>
+                <button class="btn" type="submit">Buy Product</button>
+            </form>
+
+            <!-- Delete Sales Item (DELETE) -->
+            <h3 class="header">Delete Sale Transaction</h3>
+            <form id="deleteSalesForm" class="form-container">
+                <input type="number" id="transactionId" placeholder="Transaction Id: " required>
+                <button class="btn" type="submit">Delete Item</button>
+            </form>
+
+            <!-- Sales Table -->
+            <h3 class="header">Sales Table</h3>
+            <table id="salesTable" class="sales-table">
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+						<th>Customer Name</th>
+						<th>Customer Type</th>
+                        <th>Product Name</th>
+						<th>Product Category</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Branch</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sales items will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Chat Tab -->
+        <div id="chat" class="tab-content">
+            <h2 class="header">Chat</h2>
+            <div id="username-page">
+                <div class="username-page-container">
+                    <input type="text" id="targetBranch" placeholder="Target branch" required/>
+                    <h1 class="title">Type your username to enter the Chatroom</h1>
+                    <form id="usernameForm" name="usernameForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Username" autocomplete="off" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="accent username-submit">Start Chatting</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="chat-page" class="hidden">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <h2>Chat between Branches :)</h2>
+                    </div>
+                    <div class="connecting"></div>
+                    <ul id="messageArea">
+            
+                    </ul>
+                    <form id="messageForm" name="messageForm">
+                        <div class="form-group">
+                            <div class="input-group clearfix">
+                                <input type="text" id="message" placeholder="Type a message..." autocomplete="off" class="form-control"/>
+                                <button type="submit" class="primary">Send</button>
+                                <button type="button" id="exitButton" class="primary">Exit Chat</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+        <script src="/js/EmployeePanel.js"></script>
+
+    <!-- <script>
+        // Function to show the specific tab by its ID
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.style.display = 'none'; // Hide all tabs
+            });
+            
+            const activeTab = document.getElementById(tabId);
+            if (activeTab) {
+                activeTab.style.display = 'block'; // Show the active tab
+            }
+        }
+        window.onload = () => {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.style.display = 'none'; // Initially hide all tabs
+            });
+
+            // Clear Screen
+            showTab('none');
+        };
+
+        // Logout function
+        function logout() {
+            fetch('/api/v1/logout', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Logged out successfully');
+                window.location.href = '/login.html';  // Redirect to the login page
+            })
+            .catch(error => console.error('Logout error:', error));
+        }
+
+        
+        // Inventory Functions /////////////////////////////////////////////
+        // View All Inventory
+        function viewInventory() {
+            fetch('/api/v1/inventory')
+                .then(response => response.json())
+                .then(data => {
+                    const inventoryTableBody = document.getElementById('inventoryTable').getElementsByTagName('tbody')[0];
+                    inventoryTableBody.innerHTML = ''; // Clear any existing rows in the table body
+
+                    data.forEach(item => {
+                        // Create a new row for each inventory item
+                        const row = document.createElement('tr');
+
+                        // Create and append cells for each property of the inventory item
+                        const transactionIdCell = document.createElement('td');
+                        transactionIdCell.textContent = item.inventoryId;
+                        row.appendChild(transactionIdCell);
+
+                        const productNameCell = document.createElement('td');
+                        productNameCell.textContent = item.productName;
+                        row.appendChild(productNameCell);
+
+                        const quantityCell = document.createElement('td');
+                        quantityCell.textContent = item.quantity;
+                        row.appendChild(quantityCell);
+
+                        const priceCell = document.createElement('td');
+                        priceCell.textContent = item.price;
+                        row.appendChild(priceCell);
+
+                        const categoryCell = document.createElement('td');
+                        categoryCell.textContent = item.productCategory;
+                        row.appendChild(categoryCell);
+
+                        const branchCell = document.createElement('td');
+                        branchCell.textContent = item.branch;
+                        row.appendChild(branchCell);
+
+                        // Append the newly created row to the table body
+                        inventoryTableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching inventory:', error));
+            }
+
+        // Get Inventory by Inventory Branch logic
+        document.getElementById('getInventoryByBranchForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            // Get the branch input value from the form
+            const branch = document.getElementById('branchInput').value;
+
+            // Fetch inventory items by the provided branch
+            fetch(`/api/v1/inventory/branch/${branch}`)
+                .then(response => response.json())
+                .then(data => {
+                    const inventoryTableBody = document.getElementById('inventoryTable').getElementsByTagName('tbody')[0];
+                    inventoryTableBody.innerHTML = ''; // Clear any existing rows in the table body
+
+                    // Check if data is returned
+                    if (data.length === 0) {
+                        alert('No inventory found for the given branch.');
+                        return;
+                    }
+
+                    // Populate the table with the fetched inventory data
+                    data.forEach(item => {
+                        const row = document.createElement('tr');
+
+                        const transactionIdCell = document.createElement('td');
+                        transactionIdCell.textContent = item.inventoryId;
+                        row.appendChild(transactionIdCell);
+
+                        const productNameCell = document.createElement('td');
+                        productNameCell.textContent = item.productName;
+                        row.appendChild(productNameCell);
+
+                        const quantityCell = document.createElement('td');
+                        quantityCell.textContent = item.quantity;
+                        row.appendChild(quantityCell);
+
+                        const priceCell = document.createElement('td');
+                        priceCell.textContent = item.price;
+                        row.appendChild(priceCell);
+
+                        const categoryCell = document.createElement('td');
+                        categoryCell.textContent = item.productCategory;
+                        row.appendChild(categoryCell);
+
+                        const branchCell = document.createElement('td');
+                        branchCell.textContent = item.branch;
+                        row.appendChild(branchCell);
+
+                        // Append the row to the table body
+                        inventoryTableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching inventory by branch:', error));
+        });
+
+        // Get Inventory by Inventory Product Name logic
+        document.getElementById('getInventoryByProductForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            // Get the Product Name input value from the form
+            const productName = document.getElementById('ProductNameInput').value;
+
+            // Fetch inventory items by the provided Product Name
+            fetch(`/api/v1/inventory/productName/${productName}`)
+                .then(response => response.json())
+                .then(data => {
+                    const inventoryTableBody = document.getElementById('inventoryTable').getElementsByTagName('tbody')[0];
+                    inventoryTableBody.innerHTML = ''; // Clear any existing rows in the table body
+
+                    // Check if data is returned
+                    if (data.length === 0) {
+                        alert('No inventory found for the given Product Name.');
+                        return;
+                    }
+
+                    // Populate the table with the fetched inventory data
+                    data.forEach(item => {
+                        const row = document.createElement('tr');
+
+                        const transactionIdCell = document.createElement('td');
+                        transactionIdCell.textContent = item.inventoryId;
+                        row.appendChild(transactionIdCell);
+
+                        const productNameCell = document.createElement('td');
+                        productNameCell.textContent = item.productName;
+                        row.appendChild(productNameCell);
+
+                        const quantityCell = document.createElement('td');
+                        quantityCell.textContent = item.quantity;
+                        row.appendChild(quantityCell);
+
+                        const priceCell = document.createElement('td');
+                        priceCell.textContent = item.price;
+                        row.appendChild(priceCell);
+
+                        const categoryCell = document.createElement('td');
+                        categoryCell.textContent = item.productCategory;
+                        row.appendChild(categoryCell);
+
+                        const branchCell = document.createElement('td');
+                        branchCell.textContent = item.branch;
+                        row.appendChild(branchCell);
+
+                        // Append the row to the table body
+                        inventoryTableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching inventory by Product Name:', error));
+        });
+
+        // Get Inventory by Inventory Product Category logic
+        document.getElementById('getInventoryByProductCategoryForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            // Check if the submit event is being triggered
+            console.log("Form submitted");
+
+            // Get the Product Category input value from the form
+            const productCategory = document.getElementById('ProductCategoryInput').value;
+
+            // Log the category to verify the input value is being retrieved correctly
+            console.log(`Product Category: ${productCategory}`);
+
+            // Fetch inventory items by the provided Product Category
+            fetch(`/api/v1/inventory/productCategory/${productCategory}`)
+                .then(response => response.json())
+                .then(data => {
+                    const inventoryTableBody = document.getElementById('inventoryTable').getElementsByTagName('tbody')[0];
+                    inventoryTableBody.innerHTML = ''; // Clear any existing rows in the table body
+
+                    // Check if data is returned
+                    if (data.length === 0) {
+                        alert('No inventory found for the given Product Category.');
+                        return;
+                    }
+
+                    // Populate the table with the fetched inventory data
+                    data.forEach(item => {
+                        const row = document.createElement('tr');
+
+                        const transactionIdCell = document.createElement('td');
+                        transactionIdCell.textContent = item.inventoryId;
+                        row.appendChild(transactionIdCell);
+
+                        const productNameCell = document.createElement('td');
+                        productNameCell.textContent = item.productName;
+                        row.appendChild(productNameCell);
+
+                        const quantityCell = document.createElement('td');
+                        quantityCell.textContent = item.quantity;
+                        row.appendChild(quantityCell);
+
+                        const priceCell = document.createElement('td');
+                        priceCell.textContent = item.price;
+                        row.appendChild(priceCell);
+
+                        const categoryCell = document.createElement('td');
+                        categoryCell.textContent = item.productCategory;
+                        row.appendChild(categoryCell);
+
+                        const branchCell = document.createElement('td');
+                        branchCell.textContent = item.branch;
+                        row.appendChild(branchCell);
+
+                        // Append the row to the table body
+                        inventoryTableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching inventory by Product Category:', error));
+        });
+
+        // Add Inventory    
+        document.getElementById('addInventoryForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            console.log("Form submitted"); // Log to see if the form submission is triggering
+            // Get values from form fields
+            const productName = document.getElementById('productName').value;
+            const quantity = document.getElementById('inventoryQuantity').value;
+            const price = document.getElementById('inventoryPrice').value;
+            const productCategory = document.getElementById('productCategory').value;
+            const branch = document.getElementById('branch').value;
+
+            // Create item object to send in POST req
+            const item = { productName, quantity, price, productCategory, branch};
+
+            // Send POST request to create new inventory item
+            fetch('/api/v1/inventory', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(item)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Inventory item added successfully');
+                document.getElementById('addInventoryForm').reset();
+                viewInventory();  // Refresh inventory list after adding
+            })
+            .catch(error => console.error('Error adding inventory:', error));
+        });
+
+
+        // Delete Inventory logic
+        document.getElementById('deleteInventoryForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const inventoryId = document.getElementById('inventoryId').value;
+
+            fetch(`/api/v1/inventory/${inventoryId}`, {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('inventory deleted successfully');
+                    document.getElementById('deleteInventoryForm').reset();
+                    viewInventory(); // Reload the employee list after deletion
+                } else {
+                    alert('Error deleting employee');
+                }
+            })
+            .catch(error => console.error('Error deleting Inventory:', error));
+        });
+
+
+        // Customers Functions /////////////////////////////////////////////
+        // View Customers
+        function viewCustomers() {
+            fetch('/api/v1/customers')
+                .then(response => response.json())
+                .then(data => {
+                    const customersTableBody = document.getElementById('customersTable').getElementsByTagName('tbody')[0];
+                    customersTableBody.innerHTML = ''; // Clear any existing rows
+
+                    data.forEach(customer => {
+                        const row = document.createElement('tr');
+
+                        const idCell = document.createElement('td');
+                        idCell.textContent = customer.customerId;
+                        row.appendChild(idCell);
+
+                        const fullNameCell = document.createElement('td');
+                        fullNameCell.textContent = customer.fullName;
+                        row.appendChild(fullNameCell);
+
+                        const idNumberCell = document.createElement('td');
+                        idNumberCell.textContent = customer.idNumber;
+                        row.appendChild(idNumberCell);
+
+                        const phoneCell = document.createElement('td');
+                        phoneCell.textContent = customer.phone;
+                        row.appendChild(phoneCell);
+
+                        const customerTypeCell = document.createElement('td');
+                        customerTypeCell.textContent = customer.customerType;
+                        row.appendChild(customerTypeCell);
+
+                        customersTableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching customers:', error));
+        }
+
+        // Add Customer
+        document.getElementById('addCustomerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            console.log("Form submitted");
+
+            const fullName = document.getElementById('customerFullName').value;
+            const idNumber = document.getElementById('customerIdNumber').value;
+            const phone = document.getElementById('customerPhone').value;
+            const customerType = document.getElementById('customerType').value;
+
+            const customer = { fullName, idNumber, phone, customerType };
+
+            fetch('/api/v1/customers', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(customer)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Customer added successfully');
+                document.getElementById('addCustomerForm').reset();
+                viewCustomers(); // Refresh customers list
+            })
+            .catch(error => console.error('Error adding customer:', error));
+        });
+
+
+        // Delete Customer logic
+        document.getElementById('deleteCustomerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const customerId = document.getElementById('customerIdToDelete').value; // Assuming this is the input field to enter customer ID to delete
+
+            fetch(`/api/v1/customers/${customerId}`, {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Customer deleted successfully');
+                    document.getElementById('deleteCustomerForm').reset();
+                    viewCustomers(); // Reload the customer list after deletion
+                } else {
+                    alert('Error deleting customer');
+                }
+            })
+            .catch(error => console.error('Error deleting customer:', error));
+        });
+
+
+        // Sales Functions /////////////////////////////////////////////
+        // View Sales
+        function viewSales() {
+            fetch('/api/v1/sales')
+                .then(response => response.json())
+                .then(data => {
+                    const salesTableBody = document.getElementById('salesTable').getElementsByTagName('tbody')[0];
+                    salesTableBody.innerHTML = ''; // Clear any existing rows
+
+                    data.forEach(sale => {
+                        const row = document.createElement('tr');
+
+                        const transactionIdCell = document.createElement('td');
+                        transactionIdCell.textContent = sale.id;
+                        row.appendChild(transactionIdCell);
+
+                        const customerNameCell = document.createElement('td');
+                        customerNameCell.textContent = sale.customerName;
+                        row.appendChild(customerNameCell);
+
+                        const customerTypeCell = document.createElement('td');
+                        customerTypeCell.textContent = sale.customerType;
+                        row.appendChild(customerTypeCell);
+
+                        const productNameCell = document.createElement('td');
+                        productNameCell.textContent = sale.productName;
+                        row.appendChild(productNameCell);
+
+                        const productCategoryCell = document.createElement('td');
+                        productCategoryCell.textContent = sale.productCategory;
+                        row.appendChild(productCategoryCell);
+
+                        const quantityCell = document.createElement('td');
+                        quantityCell.textContent = sale.quantity;
+                        row.appendChild(quantityCell);
+
+                        const priceCell = document.createElement('td');
+                        priceCell.textContent = sale.price;
+                        row.appendChild(priceCell);
+
+                        const branchCell = document.createElement('td');
+                        branchCell.textContent = sale.branch;
+                        row.appendChild(branchCell);
+
+                        salesTableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching sales:', error));
+        }
+
+        // Add Sale
+        document.getElementById('addSalesForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const customerName = document.getElementById('SalesCustomerName').value;
+            const customerType = document.getElementById('SalesCustomerType').value;
+            const productName = document.getElementById('SalesProductName').value;
+            const productCategory = document.getElementById('SalesProductCategory').value;
+            const quantity = document.getElementById('SalesQuantity').value;
+            const price = document.getElementById('SalesPrice').value;
+            const branch = document.getElementById('SalesBranch').value;
+
+            const sale = { customerName, customerType, productName, productCategory, quantity, price, branch };
+
+            fetch('/api/v1/sales', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(sale)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Sale added successfully');
+                document.getElementById('addSalesForm').reset();
+                viewSales(); // Refresh sales list
+            })
+            .catch(error => console.error('Error adding sale:', error));
+        });
+
+
+        // Handle the Buy Product form submission
+        document.getElementById('buyProductForm').addEventListener('submit', function(event) {
+            console.log('Form submitted!');
+            event.preventDefault();
+
+            // Get the values from the form fields
+            const customerId = document.getElementById('BuycustomerId').value;
+            const productName = document.getElementById('BuyproductName').value;
+            const quantity = document.getElementById('Buyquantity').value;
+
+            console.log('Customer ID:', customerId);
+            console.log('Product Name:', productName);
+            console.log('Quantity:', quantity);
+            // Construct the query string with customerId, productName, and quantity
+            const queryString = `?customerId=${customerId}&productName=${encodeURIComponent(productName)}&quantity=${quantity}`;
+
+            console.log('Sending product name:', productName);
+            console.log('Query string:', queryString);
+            console.log('Sending request to URL: /api/v1/sales/buy' + queryString);
+            // Send a POST request to the server with the query parameters
+            fetch(`/api/v1/sales/buy${queryString}`, {
+                method: 'POST', // We still use POST for creating a sale, but send parameters via GET.
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error making purchase');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Handle successful purchase
+                alert('Purchase successful!');
+                document.getElementById('buyProductForm').reset();
+                viewSales(); 
+            })
+            .catch(error => {
+                viewSales(); 
+                // Handle error
+                // console.error('Error making purchase:', error);
+                // alert('Error processing the purchase');
+            });
+        });
+
+        // Get Sales by Branch logic
+        document.getElementById('getSalesByBranchForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            // Get the branch input value from the form
+            const branch = document.getElementById('SalesbranchInput').value;
+
+            // Fetch sales items by the provided branch
+            fetch(`/api/v1/sales/branch/${branch}`)
+                .then(response => response.json())
+                .then(data => {
+                    const salesTableBody = document.getElementById('salesTable').getElementsByTagName('tbody')[0];
+                    salesTableBody.innerHTML = ''; // Clear any existing rows in the table body
+                    console.log("Fetched sales data:", data);
+
+                    // Check if data is returned
+                    if (data.length === 0) {
+                        alert('No sales found for the given branch.');
+                        return;
+                    }
+
+                    // Populate the table with the fetched sales data
+                    data.forEach(item => {
+                        const row = document.createElement('tr');
+
+                        // Transaction ID
+                        const transactionIdCell = document.createElement('td');
+                        transactionIdCell.textContent = item.id;  
+                        row.appendChild(transactionIdCell);
+
+                        // Customer Name
+                        const customerNameCell = document.createElement('td');
+                        customerNameCell.textContent = item.customerName;  
+                        row.appendChild(customerNameCell);
+
+                        // Customer Type
+                        const customerTypeCell = document.createElement('td');
+                        customerTypeCell.textContent = item.customerType;  
+                        row.appendChild(customerTypeCell);
+
+                        // Product Name
+                        const productNameCell = document.createElement('td');
+                        productNameCell.textContent = item.productName; 
+                        row.appendChild(productNameCell);
+
+                        // Product Category
+                        const productCategoryCell = document.createElement('td');
+                        productCategoryCell.textContent = item.productCategory;  
+                        row.appendChild(productCategoryCell);
+
+                        // Quantity
+                        const quantityCell = document.createElement('td');
+                        quantityCell.textContent = item.quantity;  
+                        row.appendChild(quantityCell);
+
+                        // Price (check for proper field mapping)
+                        const priceCell = document.createElement('td');
+                        if (item.price !== undefined && item.price !== null) {
+                            priceCell.textContent = item.price;  
+                        } else {
+                            priceCell.textContent = 'N/A';  // Handle case where price is missing
+                        }
+                        row.appendChild(priceCell);
+
+                        // Branch (check for proper field mapping)
+                        const branchCell = document.createElement('td');
+                        if (item.branch !== undefined && item.branch !== null) {
+                            branchCell.textContent = item.branch;  // Correct field
+                        } else {
+                            branchCell.textContent = 'N/A';  // Handle case where branch is missing
+                        }
+                        row.appendChild(branchCell);
+
+                        // Append the row to the table body
+                        salesTableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching sales by branch:', error));
+        });
+
+
+        // Get Sales by Product Name logic
+        document.getElementById('getSalesByProductForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            // Get the Product Name input value from the form
+            const productName = document.getElementById('SalesProductNameInput').value;
+
+            // Fetch sales items by the provided Product Name
+            fetch(`/api/v1/sales/productName/${productName}`)
+                .then(response => response.json())
+                .then(data => {
+                    const salesTableBody = document.getElementById('salesTable').getElementsByTagName('tbody')[0];
+                    salesTableBody.innerHTML = ''; // Clear any existing rows in the table body
+
+                    // Check if data is returned
+                    if (data.length === 0) {
+                        alert('No sales found for the given branch.');
+                        return;
+                    }
+
+                    // Populate the table with the fetched sales data
+                    data.forEach(item => {
+                        const row = document.createElement('tr');
+
+                        // Transaction ID
+                        const transactionIdCell = document.createElement('td');
+                        transactionIdCell.textContent = item.id;  
+                        row.appendChild(transactionIdCell);
+
+                        // Customer Name
+                        const customerNameCell = document.createElement('td');
+                        customerNameCell.textContent = item.customerName;  
+                        row.appendChild(customerNameCell);
+
+                        // Customer Type
+                        const customerTypeCell = document.createElement('td');
+                        customerTypeCell.textContent = item.customerType;  
+                        row.appendChild(customerTypeCell);
+
+                        // Product Name
+                        const productNameCell = document.createElement('td');
+                        productNameCell.textContent = item.productName; 
+                        row.appendChild(productNameCell);
+
+                        // Product Category
+                        const productCategoryCell = document.createElement('td');
+                        productCategoryCell.textContent = item.productCategory;  
+                        row.appendChild(productCategoryCell);
+
+                        // Quantity
+                        const quantityCell = document.createElement('td');
+                        quantityCell.textContent = item.quantity;  
+                        row.appendChild(quantityCell);
+
+                        // Price (check for proper field mapping)
+                        const priceCell = document.createElement('td');
+                        if (item.price !== undefined && item.price !== null) {
+                            priceCell.textContent = item.price;  
+                        } else {
+                            priceCell.textContent = 'N/A';  // Handle case where price is missing
+                        }
+                        row.appendChild(priceCell);
+
+                        // Branch (check for proper field mapping)
+                        const branchCell = document.createElement('td');
+                        if (item.branch !== undefined && item.branch !== null) {
+                            branchCell.textContent = item.branch;  // Correct field
+                        } else {
+                            branchCell.textContent = 'N/A';  // Handle case where branch is missing
+                        }
+                        row.appendChild(branchCell);
+
+                        // Append the row to the table body
+                        salesTableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching sales by product name:', error));
+        });
+
+
+        // Get Sales by Product Category logic
+        document.getElementById('getSalesByProductCategoryForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            // Get the Product Category input value from the form
+            const productCategory = document.getElementById('SalesProductCategoryInput').value;
+
+            // Fetch sales items by the provided Product Category
+            fetch(`/api/v1/sales/productCategory/${productCategory}`)
+                .then(response => response.json())
+                .then(data => {
+                    const salesTableBody = document.getElementById('salesTable').getElementsByTagName('tbody')[0];
+                    salesTableBody.innerHTML = ''; // Clear any existing rows in the table body
+
+                    // Check if data is returned
+                    if (data.length === 0) {
+                        alert('No sales found for the given branch.');
+                        return;
+                    }
+
+                    // Populate the table with the fetched sales data
+                    data.forEach(item => {
+                        const row = document.createElement('tr');
+
+                        // Transaction ID
+                        const transactionIdCell = document.createElement('td');
+                        transactionIdCell.textContent = item.id;  
+                        row.appendChild(transactionIdCell);
+
+                        // Customer Name
+                        const customerNameCell = document.createElement('td');
+                        customerNameCell.textContent = item.customerName;  
+                        row.appendChild(customerNameCell);
+
+                        // Customer Type
+                        const customerTypeCell = document.createElement('td');
+                        customerTypeCell.textContent = item.customerType;  
+                        row.appendChild(customerTypeCell);
+
+                        // Product Name
+                        const productNameCell = document.createElement('td');
+                        productNameCell.textContent = item.productName; 
+                        row.appendChild(productNameCell);
+
+                        // Product Category
+                        const productCategoryCell = document.createElement('td');
+                        productCategoryCell.textContent = item.productCategory;  
+                        row.appendChild(productCategoryCell);
+
+                        // Quantity
+                        const quantityCell = document.createElement('td');
+                        quantityCell.textContent = item.quantity;  
+                        row.appendChild(quantityCell);
+
+                        // Price (check for proper field mapping)
+                        const priceCell = document.createElement('td');
+                        if (item.price !== undefined && item.price !== null) {
+                            priceCell.textContent = item.price;  
+                        } else {
+                            priceCell.textContent = 'N/A';  // Handle case where price is missing
+                        }
+                        row.appendChild(priceCell);
+
+                        // Branch (check for proper field mapping)
+                        const branchCell = document.createElement('td');
+                        if (item.branch !== undefined && item.branch !== null) {
+                            branchCell.textContent = item.branch;  // Correct field
+                        } else {
+                            branchCell.textContent = 'N/A';  // Handle case where branch is missing
+                        }
+                        row.appendChild(branchCell);
+
+                        // Append the row to the table body
+                        salesTableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching sales by product category:', error));
+        });
+
+
+
+
+        // Delete Sale logic
+        document.getElementById('deleteSalesForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const saleId = document.getElementById('saleIdToDelete').value; // Assuming this is the input field to enter sale ID to delete
+
+            fetch(`/api/v1/sales/${id}`, {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Sale deleted successfully');
+                    document.getElementById('deleteSalesForm').reset();
+                    viewSales(); // Reload the sales list after deletion
+                } else {
+                    alert('Error deleting sale');
+                }
+            })
+            .catch(error => console.error('Error deleting sale:', error));
+        });
+
+
+
+        // Chat Functions ////////////////////////////////////////////
+        // Chat Interface - Handle message sending
+        document.getElementById('sendMessageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const message = document.getElementById('message').value;
+
+            if (message.trim() === "") return;
+
+            // Send the message to the server or chat API (not implemented here)
+            displayChatMessage(message, 'You');  // Display user's message
+            document.getElementById('message').value = '';  // Clear input
+
+            // Simulate receiving a reply after 2 seconds
+            setTimeout(() => {
+                displayChatMessage("Hello! How can I assist you?", 'Support'); // Simulate bot reply
+            }, 2000);
+        });
+
+        // Display chat message
+        function displayChatMessage(message, sender) {
+            const chatArea = document.getElementById('chatArea');
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('chat-message');
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            chatArea.appendChild(messageElement);
+            chatArea.scrollTop = chatArea.scrollHeight; // Auto-scroll to latest message
+        }        
+
+
+    </script> -->
+
+</body>
+</html>

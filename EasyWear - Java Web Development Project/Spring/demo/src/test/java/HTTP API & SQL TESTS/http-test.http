@@ -1,0 +1,207 @@
+
+################################################  Users  #############################################
+
+GET http://localhost:8080/api/v1/User
+
+###
+POST http://localhost:8080/api/v1/User
+Content-Type: application/json
+
+{"username": "Shak",
+"password": "klumlum",
+"role": "Efes"
+}
+
+###
+DELETE http://localhost:8080/api/v1/User/57
+
+
+###
+PUT http://localhost:8080/api/v1/User/140?username=testkaze
+Content-Type: application/json
+
+###
+PUT http://localhost:8080/api/v1/User/27?password=666666
+Content-Type: application/json
+
+###
+PUT http://localhost:8080/api/v1/User/29?role=looser
+Content-Type: application/json
+
+###
+PUT http://localhost:8080/api/v1/User/140
+Content-Type: application/json
+
+{"username": "testkaze",
+"password": "klumlum",
+"role": "Admin"
+}
+
+################################################  Employees  #############################################
+
+
+GET http://localhost:8080/api/v1/employees
+
+###
+POST http://localhost:8080/api/v1/employees
+Content-Type: application/json
+
+{"employeeId": "312162140",
+"username": "kobis",
+"firstName": "kobi",
+"lastName": "aflalo",
+"password": "klumlum",
+"email": "kobiaflalo@gmail.com ",
+"role": "Employee",
+"phone": "05055588822",
+"dob": "2000-08-05",
+"age": 21,
+"branch": "Tel-Aviv"
+}
+
+###
+DELETE http://localhost:8080/api/v1/employees/93
+
+
+###
+PUT http://localhost:8080/api/v1/employees/27?username=shaking
+Content-Type: application/json
+
+###
+PUT http://localhost:8080/api/v1/employees/27?password=666666
+Content-Type: application/json
+
+###
+PUT http://localhost:8080/api/v1/employees/29?role=looser
+Content-Type: application/json
+
+
+
+###
+PUT http://localhost:8080/api/v1/employees/90
+Content-Type: application/json
+
+{"employeeId": "123321456",
+"username": "testemployee",
+"firstName": "test",
+"lastName": "test",
+"password": "test",
+"email": "test@gmail.com ",
+"role": "Employee",
+"phone": "05055588822",
+"dob": "2000-08-05",
+"age": 21,
+"branch": "Tel-Aviv"
+}
+
+################################################  Inventory  #############################################
+
+GET http://localhost:8080/api/v1/inventory
+
+###
+POST http://localhost:8080/api/v1/inventory
+Content-Type: application/json
+
+{"productName": "test",
+"quantity": 21,
+"price": 500,
+"productCategory": "test",
+"branch": "test"
+}
+
+###
+DELETE http://localhost:8080/api/v1/inventory/4
+
+
+###
+PUT http://localhost:8080/api/v1/inventory/27?username=shaking
+Content-Type: application/json
+
+###
+PUT http://localhost:8080/api/v1/inventory/27?password=666666
+Content-Type: application/json
+
+###
+PUT http://localhost:8080/api/v1/inventory/29?role=looser
+Content-Type: application/json
+
+
+
+
+
+
+################################################  Customers  #############################################
+
+GET http://localhost:8080/api/v1/customers
+
+###
+POST http://localhost:8080/api/v1/customers
+Content-Type: application/json
+
+{"fullName": "test",
+"idNumber": "something",
+"phone": "something",
+"customerType": "VIP"
+}
+
+###
+DELETE http://localhost:8080/api/v1/customers/10
+
+
+###
+PUT http://localhost:8080/api/v1/customers/27?username=shaking
+Content-Type: application/json
+
+###
+PUT http://localhost:8080/api/v1/customers/27?password=666666
+Content-Type: application/json
+
+###
+PUT http://localhost:8080/api/v1/customers/29?role=looser
+Content-Type: application/json
+
+
+################################################  Sales  #############################################
+
+GET http://localhost:8080/api/v1/sales
+
+###
+POST http://localhost:8080/api/v1/sales
+Content-Type: application/json
+
+{"customerName": "Moshe Cohen",
+"customerType": "New",
+"productName": "Yellow Shoes",
+"productCategory": "Shoes",
+"quantity": 8,
+"price": 250,
+"branch": "Tel-Aviv"
+}
+
+###
+GET http://localhost:8080/api/v1/sales/branch/Tel-Aviv
+
+###
+GET http://localhost:8080/api/v1/sales/productName/Winter%20Coat%20Black
+
+###
+DELETE http://localhost:8080/api/v1/sales/4
+
+
+###
+POST http://localhost:8080/api/v1/sales/buy?customerId=7&productName=Winter%20Coat%20Black&quantity=1
+###
+POST http://localhost:8080/api/v1/sales/buy?customerId=8&productName=Winter%20Coat%20Black&quantity=1
+
+###
+POST http://localhost:8080/api/v1/sales/buy?customerId=9&productName=Winter%20Coat%20Black&quantity=1
+
+###
+POST https://f43f-185-164-16-241.ngrok-free.app/api/v1/sales/buy?customerId=7&productName=Yellow%20Shoes&quantity=5
+
+
+################################################  Reports  #############################################
+
+
+
+GET http://localhost:8080/api/v1/reports/byBranch/Tel-Aviv
