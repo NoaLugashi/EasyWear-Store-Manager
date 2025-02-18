@@ -33,7 +33,7 @@
 -- FROM information_schema.table_constraints 
 -- WHERE table_name = 'inventory' AND constraint_type = 'UNIQUE';
 
-SELECT * FROM users;
+-- SELECT * FROM users;
 -- SELECT * FROM employees;
 -- SELECT * FROM branches;
 -- SELECT * FROM inventory;

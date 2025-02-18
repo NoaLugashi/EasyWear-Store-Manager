@@ -1,4 +1,4 @@
-package com.example.demo.User;
+package com.example.demo.user;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -96,4 +96,5 @@ public class User {
             ", branch='" + getBranch() + "'" +
             "}";
     }
+
 }

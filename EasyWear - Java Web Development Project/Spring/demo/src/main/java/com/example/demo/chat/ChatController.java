@@ -15,12 +15,12 @@ import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 
-import com.example.demo.User.User;
-import com.example.demo.User.UserRepository;
 import com.example.demo.employee.Employee;
 import com.example.demo.employee.EmployeeRepository;
 import com.example.demo.log.AuditLogUtil;
 import com.example.demo.log.LogService;
+import com.example.demo.user.User;
+import com.example.demo.user.UserRepository;
 
 @Controller
 public class ChatController {

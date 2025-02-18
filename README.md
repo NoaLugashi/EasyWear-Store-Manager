@@ -23,15 +23,14 @@ It provides functionality to manage sales transactions, generate reports, and in
 ## Users
 
 ### Admin User
-- **Username**: `roy_admin`
+- **Username**: `noa_admin`
+-**Password**: `123456`
 - **Capabilities**: Full access to all system features.
 
 ### Employee User
-- **Username**: `roy`
+- **Username**: `Or15`
+-**Password**: `Or12`
 - **Capabilities**: Limited to employee-level functionalities.
-
-### Shared Password
-- **Password for both users**: `Roy123!`
 
 ## Deployment Instructions
 

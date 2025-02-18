@@ -1,4 +1,4 @@
-package com.example.demo.User;
+package com.example.demo.user;
 
 import java.util.List;
 
@@ -97,4 +97,5 @@ public class UserController {
             return "Authentication failed!";
         }
     }
+
 }
